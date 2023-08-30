@@ -1,0 +1,4 @@
+% ssh, tunnels
+
+# connect to ssh
+ssh <target>

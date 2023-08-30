@@ -1,0 +1,7 @@
+
+# Since bash doesn't support right prompt, we use this to indicate we run fish
+# XXX: unpractical for copy paste
+# right_format = """  🐟  """
+
+[git_status]
+disabled = true
