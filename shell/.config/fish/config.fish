@@ -94,3 +94,9 @@ abbr -a venv 'python -m venv .venv && . .venv/bin/activate.fish && pip install -
 
 # direnv
 direnv hook fish | source
+
+# Charge les configuration spécifiques au poste pour le shell fish
+switch (hostname)
+  case "CR7H3M3"
+    . $HOME/.local/cross_fish_conf.CR7H3M3.fish
+end
