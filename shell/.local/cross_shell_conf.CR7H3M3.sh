@@ -11,8 +11,17 @@ export VISUAL="code --wait"
 # export BROWSER=microsoft-edge
 export BROWSER="'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'"
 
-### Various check and sugar
-if timeout 0.5 pgrep docker >/dev/null 2>&1; then # grep the process instead of calling docker directly for speed
+### Start docker automatically
+dockerd_pidf="/var/run/docker.pid"
+
+if [ ! -e "$dockerd_pidf" ]; then
+  printf >&2 "%-50s" " Starting docker..."
+  echo >&2 -e ""
+  nohup sudo dockerd &> /tmp/dockerd.log &
+  sleep 1
+fi
+
+if [ -e "$dockerd_pidf" ]; then
   printf >&2 "%-50s" " Docker is started"
   echo >&2 -e "✅"
 else
@@ -21,6 +30,7 @@ else
 fi
 
 echo "" # Empty line
+
 
 
 set PATH $PATH $HOME/.local/bin
