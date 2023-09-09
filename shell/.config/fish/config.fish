@@ -78,6 +78,7 @@ abbr -a dsw docker swarm
 abbr -a dst docker stack
 abbr -a ds docker service
 abbr -a dse docker service
+abbr -a dself docker service logs -f --tail=10 
 
 abbr -a dc docker compose
 abbr -a dcud docker compose up -d
