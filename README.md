@@ -17,10 +17,6 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir ~/.local/bin
 ```
 
 - Download executable of [navi](https://github.com/denisidoro/navi) and put it in `~/.local/bin`
-  - Download your custom [navi cheatsheet](https://git.nimamoh.net/romain/hey-listen):
-```fish
-git clone https://git.nimamoh.net/romain/hey-listen.git ~/.local/share/navi/cheats/nimamoh_cheats
-```
 
 ### Install optional tools
 
