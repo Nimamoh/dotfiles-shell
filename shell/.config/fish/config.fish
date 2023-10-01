@@ -91,7 +91,8 @@ abbr -a mysql mysql --protocol=tcp
 set -g fish_escape_delay_ms 10
 
 #
-abbr -a venv 'python -m venv .venv && . .venv/bin/activate.fish && pip install --upgrade pip'
+abbr -a rvenv 'rm -rf .venv && python -m venv .venv && . .venv/bin/activate.fish && pip install --upgrade pip'
+abbr -a venv '. .venv/bin/activate.fish'
 
 # direnv
 direnv hook fish | source
