@@ -12,24 +12,24 @@ export VISUAL="code --wait"
 export BROWSER="'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'"
 
 ### Start docker automatically
-dockerd_pidf="/var/run/docker.pid"
+#dockerd_pidf="/var/run/docker.pid"
 
-if [ ! -e "$dockerd_pidf" ]; then
-  printf >&2 "%-50s" " Starting docker..."
-  echo >&2 -e ""
-  nohup sudo dockerd &> /tmp/dockerd.log &
-  sleep 1
-fi
+#if [ ! -e "$dockerd_pidf" ]; then
+#  printf >&2 "%-50s" " Starting docker..."
+#  echo >&2 -e ""
+#  nohup sudo dockerd &> /tmp/dockerd.log &
+#  sleep 1
+#fi
 
-if [ -e "$dockerd_pidf" ]; then
-  printf >&2 "%-50s" " Docker is started"
-  echo >&2 -e "✅"
-else
-  printf >&2 "%-50s" " Docker is stopped"
-  echo >&2 -e "❌"
-fi
+#if [ -e "$dockerd_pidf" ]; then
+#  printf >&2 "%-50s" " Docker is started"
+#  echo >&2 -e "✅"
+#else
+#  printf >&2 "%-50s" " Docker is stopped"
+#  echo >&2 -e "❌"
+#fi
 
-echo "" # Empty line
+#echo "" # Empty line
 
 
 

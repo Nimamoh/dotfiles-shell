@@ -2,3 +2,6 @@
 
 # connect to ssh
 ssh <target>
+
+# Tunnel
+ssh -N -f -L <port_local>:<interface_distante>:<port_distant> <adresse_distante>
