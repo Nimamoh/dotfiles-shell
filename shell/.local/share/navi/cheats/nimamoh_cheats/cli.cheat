@@ -1,0 +1,4 @@
+% cli
+
+# process with TCP port opened
+sudo ss -tulnp | grep <port>
