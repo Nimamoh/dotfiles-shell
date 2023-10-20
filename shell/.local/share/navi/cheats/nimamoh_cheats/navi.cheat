@@ -1,4 +1,4 @@
 % navi
 
-# edit local navi cheats
-editor ~/.local/share/navi/cheats/local_cheats/main.cheat
+# code into navi cheatsheets
+code ~/.local/share/navi/cheats
