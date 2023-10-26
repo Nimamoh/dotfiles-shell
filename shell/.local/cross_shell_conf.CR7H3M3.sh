@@ -11,7 +11,7 @@ export VISUAL="code --wait"
 # export BROWSER=microsoft-edge
 export BROWSER="'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'"
 
-### Start docker automatically
+### Start docker automatically - Disabled for now
 #dockerd_pidf="/var/run/docker.pid"
 
 #if [ ! -e "$dockerd_pidf" ]; then
