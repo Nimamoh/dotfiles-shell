@@ -6,7 +6,7 @@ export HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
 export DISPLAY=$HOST_IP:0.0
 
 export EDITOR="vim"
-export VISUAL="code --wait"
+export VISUAL="my_code --wait"
 #export BROWSER=firefox
 # export BROWSER=microsoft-edge
 export BROWSER="'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'"
