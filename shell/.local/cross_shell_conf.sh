@@ -18,6 +18,10 @@ case "$HOSTNAME" in
   # shellcheck disable=SC1091
   . "$HOME/.local/cross_shell_conf.CR7H3M3.sh"
   ;;
+'thinker')
+  # shellcheck disable=SC1091
+  . "$HOME/.local/cross_shell_conf.thinker.sh"
+  ;;
 esac
 
 # Flag indicating we pass through common configuration

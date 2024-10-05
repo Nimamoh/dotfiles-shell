@@ -101,7 +101,10 @@ abbr -a venv '. .venv/bin/activate.fish'
 direnv hook fish | source
 
 # Charge les configuration spécifiques au poste pour le shell fish
-switch (hostname)
+set HOSTNAME (cat /etc/hostname)
+switch "$HOSTNAME"
   case "CR7H3M3"
     . $HOME/.local/cross_fish_conf.CR7H3M3.fish
+  case "thinker"
+    . $HOME/.local/cross_fish_conf.thinker.fish
 end
