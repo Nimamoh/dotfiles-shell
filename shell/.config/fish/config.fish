@@ -91,10 +91,12 @@ abbr -a dee vim .envrc
 
 abbr -a mysql mysql --protocol=tcp
 
+abbr ave ansible-vault edit
+
 set -g fish_escape_delay_ms 10
 
 #
-abbr -a rvenv 'rm -rf .venv && python -m venv .venv && . .venv/bin/activate.fish && pip install --upgrade pip'
+abbr -a rvenv 'rm -rf .venv && python -m venv .venv && . .venv/bin/activate.fish && pip install --upgrade pip && pip install pip-tools'
 abbr -a venv '. .venv/bin/activate.fish'
 
 # direnv

@@ -2,8 +2,8 @@
 
 # WSL specific
 # Now in /etc/profile.d/set-display.sh
-export HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
-export DISPLAY=$HOST_IP:0.0
+#export HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}')
+export DISPLAY=:0.0
 
 export EDITOR="vim"
 export VISUAL="my_code --wait"
@@ -34,3 +34,5 @@ export BROWSER="'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.ex
 
 
 set PATH $PATH $HOME/.local/bin
+export ASDF_DATA_DIR="/home/rog/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"

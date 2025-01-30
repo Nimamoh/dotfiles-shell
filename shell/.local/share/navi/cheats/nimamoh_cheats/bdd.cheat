@@ -1,0 +1,10 @@
+% pg_dump using docker
+
+docker run --rm \
+  -e PGPASSWORD=<password> \
+  -v <where>:/dump \
+  postgres:<version> \
+  pg_dump -h "<host>" -U "<user>" -d "<database>" -F c -f "/dump/<database>.dump" -v
+
+$ version: echo "15"
+$ where: echo "/tmp"

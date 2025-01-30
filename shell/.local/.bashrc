@@ -42,9 +42,6 @@ if test -r "$HOME/.local/bin/navi"; then
   source <(navi widget bash)
 fi
 
-source_if_exists "$HOME/.asdf/asdf.sh"
-source_if_exists "$HOME/.asdf/completions/asdf.bash"
-
 # fzf keybindings
 source_if_exists "/usr/share/fzf/key-bindings.bash"
 source_if_exists "/usr/share/fzf/completion.bash"
