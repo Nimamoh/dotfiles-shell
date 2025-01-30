@@ -34,22 +34,10 @@ if test -r ~/.local/bin/navi
   echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-' 🧚‍♂️ "
 end
 
-# Load asdf if available
-function loadasdf
-  set -l src_script ~/.asdf/asdf.fish
-  set -l completion_script_target ~/.asdf/completions/asdf.fish
-  set -l completion_script_link_name ~/.config/fish/completions/asdf.fish
-
-  if test -r $src_script
-    source $src_script
-  end
-
-  # Completions
-  if not test -r $completion_script_link_name; and test -r $completion_script_target
-    ln -s "$completion_script_target" "$completion_script_link_name" 
-  end
+# Completion asdf if available
+if test -r ~/.local/bin/asdf
+  asdf completion fish | source
 end
-loadasdf
 
 # See ~/.config/fish/functions/fish_user_key_bindings.fish for handling keybindings
 

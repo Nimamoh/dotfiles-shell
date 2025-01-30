@@ -28,9 +28,7 @@ apt install fish
 
 - asdf
 
-```bash
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
-```
+See [ official documentation ](https://asdf-vm.com/guide/getting-started.html)
 
 - fisher
 ```bash
