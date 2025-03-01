@@ -25,15 +25,15 @@ echo >&2 "  You should be able to use smartcard as ssh key"
 
 
 ### Mount pre-defined locations
-while IFS= read -r -d '' f; do
-  printf >&2 "%-50s" " Mounting $f ... "
-  if ! (mountpoint "$f" >/dev/null 2>&1 || timeout 0.5 mount "$f" >/dev/null 2>&1); then
-    echo >&2 -e "❌"
-    continue
-  else
-    echo >&2 -e "✅"
-  fi
-done < <(find /mnt -maxdepth 1 -type d -name "*CIFS" -print0)
+# while IFS= read -r -d '' f; do
+#   printf >&2 "%-50s" " Mounting $f ... "
+#   if ! (mountpoint "$f" >/dev/null 2>&1 || timeout 0.5 mount "$f" >/dev/null 2>&1); then
+#     echo >&2 -e "❌"
+#     continue
+#   else
+#     echo >&2 -e "✅"
+#   fi
+# done < <(find /mnt -maxdepth 1 -type d -name "*CIFS" -print0)
 
 ### Various check and sugar
 if timeout 0.5 pgrep docker >/dev/null 2>&1; then # grep the process instead of calling docker directly for speed
