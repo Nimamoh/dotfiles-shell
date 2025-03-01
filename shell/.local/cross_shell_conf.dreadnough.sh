@@ -22,6 +22,7 @@ echo >&2 "  sudo service pcscd start"
 echo >&2 "  gpg --card-edit"
 echo >&2 "  gpg > verify"
 echo >&2 "  You should be able to use smartcard as ssh key"
+echo >&2
 
 
 ### Mount pre-defined locations
