@@ -43,6 +43,7 @@ if test -r "$HOME/.local/bin/navi"; then
 fi
 
 if test -r "$HOME/.local/bin/asdf"; then
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
   source <(asdf completion bash)
 fi
 
