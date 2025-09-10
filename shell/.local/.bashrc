@@ -37,6 +37,10 @@ if test -r "$HOME/.local/bin/starship"; then
   eval "$(~/.local/bin/starship init bash)"
 fi
 
+if test -r "$HOME/.local/bin/uv"; then
+  eval "$(uv generate-shell-completion bash)"
+fi
+
 if test -r "$HOME/.local/bin/navi"; then
   # shellcheck disable=SC1090
   source <(navi widget bash)

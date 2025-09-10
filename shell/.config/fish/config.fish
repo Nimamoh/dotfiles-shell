@@ -34,6 +34,11 @@ if test -r ~/.local/bin/navi
   echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-' 🧚‍♂️ "
 end
 
+# Completion uv if available
+if test -r ~/.local/bin/navi
+  uv generate-shell-completion fish | source
+end
+
 # Completion asdf if available
 if test -r ~/.local/bin/asdf
   asdf completion fish | source
