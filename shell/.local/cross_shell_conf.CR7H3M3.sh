@@ -2,7 +2,8 @@
 
 # WSL specific
 export EDITOR="vim"
-export VISUAL="my_code --wait"
+#export VISUAL="my_code --wait"
+export VISUAL="vim"
 #export BROWSER=firefox
 # export BROWSER=microsoft-edge
 export BROWSER="'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'"
