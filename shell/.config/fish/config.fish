@@ -103,7 +103,7 @@ abbr ave ansible-vault edit
 set -g fish_escape_delay_ms 10
 
 #
-abbr -a rvenv 'rm -rf .venv && python -m venv .venv && . .venv/bin/activate.fish && pip install --upgrade pip && pip install pip-tools'
+abbr -a rvenv 'rm -rf .venv && uv venv && . .venv/bin/activate.fish && uv pip install --upgrade pip'
 abbr -a venv '. .venv/bin/activate.fish'
 
 # direnv
