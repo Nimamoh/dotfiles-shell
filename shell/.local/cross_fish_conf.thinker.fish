@@ -3,5 +3,4 @@
 # abbr -a ssh mon_ssh
 # abbr -a code my_code
 
-abbr -a s doas
-abbr -a sudo doas
+abbr -a s sudo
