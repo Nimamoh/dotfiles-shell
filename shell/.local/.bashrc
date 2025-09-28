@@ -44,6 +44,7 @@ fi
 if test -r "$HOME/.local/bin/navi"; then
   # shellcheck disable=SC1090
   source <(navi widget bash)
+  echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
 fi
 
 if test -r "$HOME/.local/bin/asdf"; then
