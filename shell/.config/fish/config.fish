@@ -31,7 +31,7 @@ end
 # Use navi if available
 if test -r ~/.local/bin/navi
   navi widget fish | source
-  echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-' 🧚‍♂️ "
+  echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
 end
 
 # Completion uv if available
