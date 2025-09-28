@@ -35,7 +35,7 @@ if test -r ~/.local/bin/navi
 end
 
 # Completion uv if available
-if test -r ~/.local/bin/navi
+if test -r ~/.local/bin/uv
   uv generate-shell-completion fish | source
 end
 
