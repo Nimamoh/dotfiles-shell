@@ -88,7 +88,7 @@ abbr -a dse docker service
 abbr -a dself docker service logs -f --tail=10 
 
 abbr -a dc docker compose
-#abbr -a dcud docker compose up -d
+abbr -a dcu docker compose up -d --build
 abbr -a dcud docker compose up -d --build --force-recreate
 abbr -a dcd docker compose down --remove-orphans
 abbr -a dclf docker compose logs -f --tail=10
