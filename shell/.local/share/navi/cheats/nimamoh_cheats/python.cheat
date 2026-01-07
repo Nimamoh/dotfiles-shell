@@ -82,7 +82,8 @@ finally:
         for task in pending:
             task.cancel()
         # Attendre que toutes les tâches soient annulées
-        loop.run_until_complete(asyncio.gather(*pending, return_exceptions=True))
+        if pending:
+            loop.run_until_complete(asyncio.gather(*pending, return_exceptions=True))
         # Fermer les générateurs asynchrones
         loop.run_until_complete(loop.shutdown_asyncgens())
         # Fermer l'exécuteur par défaut
