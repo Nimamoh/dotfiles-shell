@@ -63,6 +63,7 @@ EOF
 python asyncio_concurrent.py
 
 # Alternative manuelle (ce qu'asyncio.run() fait en interne)
+# Note : Nécessite Python 3.9+ pour shutdown_default_executor()
 cat << 'EOF' > asyncio_manual.py
 import asyncio
 
