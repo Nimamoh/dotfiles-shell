@@ -6,3 +6,89 @@ python -m venv .venv && \
   . .venv/bin/activate.fish && \
   pip install --upgrade pip \
   pip install pip-tools
+
+% python, asyncio
+
+# Que se passe-t-il quand on utilise asyncio.run() ?
+# asyncio.run(coro) exécute une coroutine en créant et gérant automatiquement une boucle d'événements.
+# Étapes précises :
+# 1. Crée une nouvelle boucle d'événements (event loop) avec asyncio.new_event_loop()
+# 2. Définit cette boucle comme boucle courante pour le thread avec asyncio.set_event_loop()
+# 3. Exécute la coroutine avec loop.run_until_complete(coro)
+# 4. Annule toutes les tâches asynchrones en attente (cancelled tasks)
+# 5. Ferme tous les générateurs asynchrones en cours
+# 6. Ferme les exécuteurs par défaut (default executor)
+# 7. Ferme la boucle d'événements avec loop.close()
+# 8. Retourne le résultat de la coroutine
+# Note : asyncio.run() ne peut pas être appelé dans une boucle déjà en cours d'exécution
+echo "Voir la documentation officielle : https://docs.python.org/3/library/asyncio-task.html#asyncio.run"
+
+# Exemple basique d'utilisation d'asyncio.run()
+cat << 'EOF' > asyncio_example.py
+import asyncio
+
+async def main():
+    print("Hello")
+    await asyncio.sleep(1)
+    print("World")
+    return "Done"
+
+# asyncio.run() gère tout le cycle de vie de la boucle d'événements
+result = asyncio.run(main())
+print(f"Result: {result}")
+EOF
+python asyncio_example.py
+
+# Exemple avec plusieurs tâches concurrentes
+cat << 'EOF' > asyncio_concurrent.py
+import asyncio
+
+async def task1():
+    await asyncio.sleep(1)
+    return "Task 1"
+
+async def task2():
+    await asyncio.sleep(2)
+    return "Task 2"
+
+async def main():
+    # Exécute plusieurs tâches en parallèle
+    results = await asyncio.gather(task1(), task2())
+    return results
+
+# asyncio.run() gère automatiquement toutes les tâches
+results = asyncio.run(main())
+print(f"Results: {results}")
+EOF
+python asyncio_concurrent.py
+
+# Alternative manuelle (ce qu'asyncio.run() fait en interne)
+cat << 'EOF' > asyncio_manual.py
+import asyncio
+
+async def main():
+    await asyncio.sleep(1)
+    return "Done"
+
+# Équivalent de asyncio.run(main()) :
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+try:
+    result = loop.run_until_complete(main())
+finally:
+    try:
+        # Annuler les tâches en attente
+        pending = asyncio.all_tasks(loop)
+        for task in pending:
+            task.cancel()
+        # Attendre que toutes les tâches soient annulées
+        loop.run_until_complete(asyncio.gather(*pending, return_exceptions=True))
+        # Fermer les générateurs asynchrones
+        loop.run_until_complete(loop.shutdown_asyncgens())
+        # Fermer l'exécuteur par défaut
+        loop.run_until_complete(loop.shutdown_default_executor())
+    finally:
+        loop.close()
+print(f"Result: {result}")
+EOF
+python asyncio_manual.py
