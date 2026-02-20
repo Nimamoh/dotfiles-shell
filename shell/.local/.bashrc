@@ -52,6 +52,10 @@ if test -r "$HOME/.local/bin/asdf"; then
   source <(asdf completion bash)
 fi
 
+if test -r "$HOME/.local/bin/mise"; then
+  source <(mise activate bash)
+fi
+
 # fzf keybindings
 source_if_exists "/usr/share/fzf/key-bindings.bash"
 source_if_exists "/usr/share/fzf/completion.bash"
