@@ -9,7 +9,7 @@ export VISUAL="code --wait"
 export BROWSER="'/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'"
 
 ## Enable gpg and ssh agent
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 echo >&2 "For using your yubikey on this machine:"
 echo >&2 "  From powershell admin:"
 echo >&2 "  usbipd list"
