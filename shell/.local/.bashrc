@@ -52,7 +52,7 @@ if test -r "$HOME/.local/bin/asdf"; then
   source <(asdf completion bash)
 fi
 
-if test -r "$HOME/.local/bin/mise"; then
+if type "mise"; then
   source <(mise activate bash)
 fi
 

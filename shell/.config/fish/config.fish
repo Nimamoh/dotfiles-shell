@@ -59,8 +59,8 @@ if test -r ~/.local/bin/asdf
 end
 
 # Use mise if available
-if test -r ~/.local/bin/mise
-  $HOME/.local/bin/mise activate fish | source
+if type -q mise
+  mise activate fish | source
 end
 
 # See ~/.config/fish/functions/fish_user_key_bindings.fish for handling keybindings
