@@ -47,6 +47,15 @@ fisher install jorgebucaran/autopair.fish
 ```bash
 stow shell --target=$HOME
 ```
+
+- Configuration de Claude Code propre au poste
+
+Le dossier `claude.HOSTNAME` (ex: `claude.CR7H3M3`) contient la configuration `~/.claude` spécifique à la machine. Une fois stow lancé sur ce paquet, créer le lien symbolique attendu par Claude Code :
+
+```bash
+stow claude.$(cat /etc/hostname) --target=$HOME
+```
+
 Then, load custom bashrc in `~/.bashrc`
 ```bash
 . $HOME/.local/.bashrc
