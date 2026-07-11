@@ -23,6 +23,11 @@ end
 fish_vi_key_bindings
 #fish_default_key_bindings
 
+# Use mise if available
+if type -q mise
+  mise activate fish | source
+end
+
 # Use starship if available
 if type -q starship
   eval (starship init fish)
@@ -39,10 +44,6 @@ if type -q uv
   uv generate-shell-completion fish | source
 end
 
-# Use mise if available
-if type -q mise
-  mise activate fish | source
-end
 
 # See ~/.config/fish/functions/fish_user_key_bindings.fish for handling keybindings
 
