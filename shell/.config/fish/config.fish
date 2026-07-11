@@ -24,38 +24,19 @@ fish_vi_key_bindings
 #fish_default_key_bindings
 
 # Use starship if available
-if test -r ~/.local/bin/starship
-  eval (~/.local/bin/starship init fish)
+if type -q starship
+  eval (starship init fish)
 end
 
 # Use navi if available
-if test -r ~/.local/bin/navi
+if type -q navi
   navi widget fish | source
   echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
 end
 
 # Completion uv if available
-if test -r ~/.local/bin/uv
+if type -q uv
   uv generate-shell-completion fish | source
-end
-
-# Completion asdf if available
-if test -r ~/.local/bin/asdf
-  asdf completion fish | source
-  
-  # ASDF configuration code
-  if test -z $ASDF_DATA_DIR
-    set _asdf_shims "$HOME/.asdf/shims"
-  else
-    set _asdf_shims "$ASDF_DATA_DIR/shims"
-  end
-
-  # Do not use fish_add_path (added in Fish 3.2) because it
-  # potentially changes the order of items in PATH
-  if not contains $_asdf_shims $PATH
-    set -gx --prepend PATH $_asdf_shims
-  end
-  set --erase _asdf_shims
 end
 
 # Use mise if available
