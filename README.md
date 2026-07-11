@@ -6,17 +6,9 @@ On my machines, alot of dotfiles have to do with the shell
 
 - Install git, direnv, fzf, ripgrep, fd-find
 ```bash
-apt install git fzf ripgrep fd-find direnv
+apt install mise git fzf ripgrep fd-find direnv
 ```
 
-
-
-- Install starship
-```bash
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir ~/.local/bin
-```
-
-- Download executable of [navi](https://github.com/denisidoro/navi) and put it in `~/.local/bin`
 
 ### Install optional tools
 
@@ -25,10 +17,6 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir ~/.local/bin
 ```bash
 apt install fish
 ```
-
-- asdf
-
-See [ official documentation ](https://asdf-vm.com/guide/getting-started.html)
 
 - fisher
 ```bash
@@ -48,6 +36,16 @@ fisher install jorgebucaran/autopair.fish
 stow shell --target=$HOME
 ```
 
+Then, load custom bashrc in `~/.bashrc`
+```bash
+. $HOME/.local/.bashrc
+```
+
+And leverage mise to download tools
+```bash
+mise install
+```
+
 - Configuration de Claude Code propre au poste
 
 Le dossier `claude.HOSTNAME` (ex: `claude.CR7H3M3`) contient la configuration `~/.claude` spécifique à la machine. Une fois stow lancé sur ce paquet, créer le lien symbolique attendu par Claude Code :
@@ -56,10 +54,6 @@ Le dossier `claude.HOSTNAME` (ex: `claude.CR7H3M3`) contient la configuration `~
 stow claude.$(cat /etc/hostname) --target=$HOME
 ```
 
-Then, load custom bashrc in `~/.bashrc`
-```bash
-. $HOME/.local/.bashrc
-```
 
 >  In WSL2, due to issues accessing disk, I found it wiser to disable git status from
 >  starship modeline
@@ -67,6 +61,7 @@ Then, load custom bashrc in `~/.bashrc`
 ```bash
 echo "[git_status]\ndisabled = true" >> $HOME/.config/starship.toml
 ```
+
 
 ## Various configuration guide
 

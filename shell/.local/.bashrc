@@ -33,23 +33,18 @@ source_if_exists() {
   fi
 }
 
-if test -r "$HOME/.local/bin/starship"; then
+if type "starship"; then
   eval "$(~/.local/bin/starship init bash)"
 fi
 
-if test -r "$HOME/.local/bin/uv"; then
+if type "uv"; then
   eval "$(uv generate-shell-completion bash)"
 fi
 
-if test -r "$HOME/.local/bin/navi"; then
+if type "navi"; then
   # shellcheck disable=SC1090
   source <(navi widget bash)
   echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
-fi
-
-if test -r "$HOME/.local/bin/asdf"; then
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-  source <(asdf completion bash)
 fi
 
 if type "mise"; then
