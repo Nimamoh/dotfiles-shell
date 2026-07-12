@@ -1,4 +1,8 @@
 [tools]
+claude = "latest"
+fzf = "latest"
 navi = "latest"
+neovim = "latest"
 starship = "latest"
+usage = "latest"
 uv = "latest"
