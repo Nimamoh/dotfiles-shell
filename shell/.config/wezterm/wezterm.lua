@@ -6,6 +6,9 @@ local config = wezterm.config_builder()
 -- Pas de barre de titre système (façon Firefox), mais bords redimensionnables conservés
 config.window_decorations = "RESIZE"
 
+-- Légère transparence de la fenêtre
+config.window_background_opacity = 0.92
+
 -- Onglets façon KDE/Breeze : plats, rectangulaires, surlignage sur l'onglet actif
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = false
