@@ -33,6 +33,10 @@ source_if_exists() {
   fi
 }
 
+if type "mise"; then
+  source <(mise activate bash)
+fi
+
 if type "starship"; then
   eval "$(~/.local/bin/starship init bash)"
 fi
@@ -47,9 +51,6 @@ if type "navi"; then
   echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
 fi
 
-if type "mise"; then
-  source <(mise activate bash)
-fi
 
 # fzf keybindings
 source_if_exists "/usr/share/fzf/key-bindings.bash"
