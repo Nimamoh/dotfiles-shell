@@ -1,0 +1,4 @@
+% claude
+
+# claude - start in new folder
+bash -c 'cd $(mktemp -d) && claude'
