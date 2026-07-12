@@ -38,7 +38,7 @@ if type "mise"; then
 fi
 
 if type "starship"; then
-  eval "$(~/.local/bin/starship init bash)"
+  eval "$(starship init bash)"
 fi
 
 if type "uv"; then
