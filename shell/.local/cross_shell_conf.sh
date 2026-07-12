@@ -15,9 +15,9 @@ case "$HOSTNAME" in
   . "$HOME/.local/cross_shell_conf.dreadnough.sh"
   ;;
 
-'dreadarch')
+'DREADARCH')
   # shellcheck disable=SC1091
-  . "$HOME/.local/cross_shell_conf.dreadarch.sh"
+  . "$HOME/.local/cross_shell_conf.DREADARCH.sh"
   ;;
 'CR7H3M3')
   # shellcheck disable=SC1091
