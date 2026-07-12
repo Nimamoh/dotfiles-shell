@@ -44,6 +44,11 @@ if type -q uv
   uv generate-shell-completion fish | source
 end
 
+# z used with rust
+if type -q zoxide
+  zoxide init fish | source
+end
+
 
 # See ~/.config/fish/functions/fish_user_key_bindings.fish for handling keybindings
 
