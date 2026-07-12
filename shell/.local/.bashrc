@@ -51,12 +51,10 @@ if type "navi"; then
   echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
 fi
 
+if type fzf; then
+  eval "$(fzf --bash)"
+fi
 
-# fzf keybindings
-source_if_exists "/usr/share/fzf/key-bindings.bash"
-source_if_exists "/usr/share/fzf/completion.bash"
-source_if_exists "/usr/share/doc/fzf/examples/key-bindings.bash"
-source_if_exists "/usr/share/doc/fzf/examples/completion.bash"
 
 # skim keybindings and completions
 source_if_exists "/usr/share/skim/key-bindings.bash"
