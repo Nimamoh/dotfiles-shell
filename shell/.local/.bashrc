@@ -27,9 +27,13 @@ echo "🐚 Welcome in bash shell (This is not a fish shell!) 🐚"
 ## From here, fish didn't launch. Configuring bash specifics
 source_if_exists() {
   local src="$1"
+  local msg="$2"
   if test -r "$src"; then
     # shellcheck disable=SC1090
     . "$src"
+    if [ -n "$msg" ]; then
+      echo "$msg"
+    fi
   fi
 }
 
@@ -48,14 +52,15 @@ fi
 if type "navi"; then
   # shellcheck disable=SC1090
   source <(navi widget bash)
-  echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
+  echo " 🧚‍♀️ navi is active: CTRL-G 🧚‍♂️ "
 fi
 
 if type fzf; then
   eval "$(fzf --bash)"
+  echo " 🔍 fzf is active: CTRL-T (insert file), CTRL-R (search history), ALT-C (cd) 🔍 "
 fi
 
 
 # skim keybindings and completions
-source_if_exists "/usr/share/skim/key-bindings.bash"
+source_if_exists "/usr/share/skim/key-bindings.bash" " 🄺 skim is active: CTRL-T (insert file), CTRL-R (search history), ALT-C (cd) 🄺 "
 source_if_exists "/usr/share/skim/completion.bash"

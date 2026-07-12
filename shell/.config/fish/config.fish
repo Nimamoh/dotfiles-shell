@@ -36,7 +36,7 @@ end
 # Use navi if available
 if type -q navi
   navi widget fish | source
-  echo " 🧚‍♀️ navi is active: CTRL-R or CTRL-G 🧚‍♂️ "
+  echo " 🧚‍♀️ navi is active: CTRL-G 🧚‍♂️ "
 end
 
 # Completion uv if available
@@ -51,6 +51,7 @@ end
 
 if type -q fzf
   fzf --fish | source
+  echo " 🔍 fzf is active: CTRL-T (insert file), CTRL-R (search history), ALT-C (cd) 🔍 "
 end
 
 
