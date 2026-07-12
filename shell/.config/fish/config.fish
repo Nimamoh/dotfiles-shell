@@ -48,8 +48,9 @@ end
 # See ~/.config/fish/functions/fish_user_key_bindings.fish for handling keybindings
 
 ## Abbreviations
-abbr -a paci pacman -S
-abbr -a pacs pacman -Ss
+abbr -a paci sudo pacman -S
+abbr -a pacs sudo pacman -Ss
+abbr -a pacu sudo pacman -Suyy
 abbr -a yaync yay --noconfirm
 abbr -a apti sudo apt-get install
 abbr -a aptu "sudo apt update && sudo apt upgrade"
