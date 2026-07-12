@@ -94,6 +94,14 @@ abbr -a dclf docker compose logs -f --tail=10
 abbr -a dea direnv allow
 abbr -a dee vim .envrc
 
+abbr -a claudec claude --continue
+abbr -a cclaude claude --continue
+abbr -a ccl claude --continue
+
+abbr -a clauder claude --resume
+abbr -a rclaude claude --resume
+abbr -a rcl claude --resume
+
 abbr -a mysql mysql --protocol=tcp
 
 abbr ave ansible-vault edit
