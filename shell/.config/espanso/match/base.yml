@@ -10,6 +10,12 @@
 
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
+# Emoji shortcodes (gemoji names, e.g. ":smile:" -> 😄) are enabled by the
+# "all-emojis" package from the Espanso Hub. Since espanso resolves relative
+# "imports:" paths against this file's real (post-symlink) location, an
+# import here can't reach match/packages/ which lives outside the repo. See
+# README for the (untracked, per-machine) setup step instead.
+
 matches:
   # Simple text replacement
   - trigger: ":espanso"

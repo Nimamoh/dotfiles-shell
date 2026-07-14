@@ -71,6 +71,21 @@ echo "[git_status]\ndisabled = true" >> $HOME/.config/starship.toml
 apt install tldr visidata jq httpie tree
 ```
 
+### Espanso
+
+Emoji shortcodes (`:smile:` -> 😄) via the `all-emojis` package. Not tracked
+in the repo (packages install outside it, and imports can't reach them
+through the symlinked `base.yml`), so run once per machine:
+
+```bash
+espanso install all-emojis
+cat > ~/.config/espanso/match/emojis.yml << 'EOF'
+imports:
+  - "packages/all-emojis/package.yml"
+EOF
+espanso restart
+```
+
 ### Install docker from sources
 
 [https://docs.docker.com/engine/install/binaries/#install-daemon-and-client-binaries-on-linux](https://docs.docker.com/engine/install/binaries/#install-daemon-and-client-binaries-on-linux)
