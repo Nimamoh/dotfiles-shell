@@ -7,3 +7,8 @@
 keyboard_layout:
   layout: "us"
   options: "caps:escape_shifted_compose,compose:ralt"
+
+# Search bar hotkey is disabled here and bound instead as a KDE global
+# shortcut (System Settings > Shortcuts > Custom Shortcuts) running
+# `espanso cmd search`, so it's managed in one place.
+search_shortcut: "OFF"
