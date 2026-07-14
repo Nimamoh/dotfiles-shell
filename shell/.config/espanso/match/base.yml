@@ -40,13 +40,19 @@ matches:
   # And much more! For more information, visit the docs: https://espanso.org/docs/
 
   # Lenny face
+  # force_mode: clipboard because these combining/CJK characters can't be
+  # typed via key injection on Wayland (no XTest-style keycode remapping),
+  # so we fall back to clipboard paste instead.
   - trigger: ":lf"
     replace: "( ͡° ͜ʖ ͡°)"
+    force_mode: clipboard
 
   # Shrug
   - trigger: ":sf"
     replace: '¯\_(ツ)_/¯'
+    force_mode: clipboard
 
   # Table flip
   - trigger: ":tf"
     replace: "(┛ಠ_ಠ)┛彡┻━┻"
+    force_mode: clipboard

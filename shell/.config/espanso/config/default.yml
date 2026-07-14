@@ -1,0 +1,9 @@
+# espanso configuration file
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/config.schema.json
+
+# On KDE Plasma Wayland espanso can't auto-detect the keyboard layout, which
+# breaks how the EVDEV injector maps scancodes to characters. Values match
+# KWin's actual xkb config (~/.config/kxkbrc + `setxkbmap -query` via XWayland).
+keyboard_layout:
+  layout: "us"
+  options: "caps:escape_shifted_compose,compose:ralt"

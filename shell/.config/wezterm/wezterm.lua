@@ -3,6 +3,12 @@ local act = wezterm.action
 
 local config = wezterm.config_builder()
 
+-- Police par défaut + fallback CJK pour les glyphes absents (ex: ツ dans les kaomoji/shrug)
+config.font = wezterm.font_with_fallback({
+	"Noto Sans Mono",
+	"Noto Sans CJK JP",
+})
+
 -- Pas de barre de titre système (façon Firefox), mais bords redimensionnables conservés
 config.window_decorations = "RESIZE"
 
@@ -48,6 +54,13 @@ config.colors = {
 }
 
 config.keys = {
+	-- Par défaut WezTerm lie Shift+Insert à PasteFrom(PrimarySelection)
+	-- (convention xterm historique), alors que la plupart des apps Linux/GTK
+	-- et les outils comme espanso qui simulent Shift+Insert comme raccourci
+	-- de collage générique s'attendent à ce qu'il colle le presse-papier
+	-- classique (CLIPBOARD). On aligne WezTerm sur cette convention majoritaire.
+	{ key = "Insert", mods = "SHIFT", action = act.PasteFrom("Clipboard") },
+
 	-- Créer un panneau à droite
 	{ key = "phys:Equal", mods = "ALT|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 
