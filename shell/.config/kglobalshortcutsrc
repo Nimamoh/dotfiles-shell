@@ -5,7 +5,7 @@ switch-to-activity-b156d29d-92c9-4a4b-a2b1-0851e49afcb4=none,none,Passer à l'ac
 [KDE Keyboard Layout Switcher]
 Switch to Last-Used Keyboard Layout=Meta+Alt+L,Meta+Alt+L,Basculer vers la dernière disposition de clavier
 Switch to Next Keyboard Layout=Meta+Alt+K,Meta+Alt+K,Passer à la disposition de clavier suivante
-_k_friendly_name=Changeur de disposition de clavier
+_k_friendly_name=Commutateur de dispositions de clavier
 
 [com.anthropic.Claude]
 5EA0767884B4451E9BBA35AFE6760DA5-Ctrl+Alt+Space=Ctrl+Alt+Space,Ctrl+Alt+Space,Claude shortcut: Ctrl+Alt+Space
